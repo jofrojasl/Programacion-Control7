@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class ProgramaExcepcion2 {
+
+    public static void main(String[] args) {
+
+        Scanner leer = new Scanner(System.in);
+
+        int a = 0, b = 0, division;
+
+        try {
+
+            System.out.print("Dame un número entero: ");
+            a = leer.nextInt();
+
+            System.out.print("Dame otro número entero: ");
+            b = leer.nextInt();
+
+            division = a / b;
+
+            System.out.println("Resultado = " + division);
+
+        } catch (InputMismatchException e) {
+
+            // excepción cuando el usuario no ingresa enteros
+            System.out.println("Leí datos inválidos");
+            System.out.println("Se dio una excepción");
+
+        } catch (ArithmeticException e) {
+
+            // excepción cuando se divide entre cero
+            System.out.println("Resultado infinito");
+            System.out.println("Se dio una excepción");
+        }
+
+        System.out.println("Se siguió con la ejecución");
+
+        leer.close();
+    }
+}
