@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class ProgramaExcepcion3 {
+
+    public static void main(String[] args) {
+
+        Scanner leer = new Scanner(System.in);
+
+        int a = 0, b = 0, division;
+
+        try {
+
+            System.out.print("Dame un número entero: ");
+            a = leer.nextInt();
+
+            System.out.print("Dame otro número entero: ");
+            b = leer.nextInt();
+
+            division = a / b;
+
+            System.out.println("Resultado = " + division);
+
+        } catch (Exception e) {
+
+            // se atrapará cualquier tipo de excepción
+            System.out.println("Ocurrió un error en la ejecución");
+
+            // se imprime el tipo de excepción ocurrida
+            System.out.println(e.toString());
+        }
+
+        System.out.println("Se siguió con la ejecución");
+
+        leer.close();
+    }
+}
